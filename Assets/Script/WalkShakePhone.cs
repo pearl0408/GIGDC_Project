@@ -28,7 +28,6 @@ public class WalkShakePhone : MonoBehaviour
 
     public void Shake()
     {
-<<<<<<< HEAD
         walkNumText += 500;
         walkNum.GetComponent<Text>().text = walkNumText.ToString();
 
@@ -37,9 +36,8 @@ public class WalkShakePhone : MonoBehaviour
             //씬 전환
             Debug.Log("애니메이션 전환");
         }
-=======
+
         moveVelocity = new Vector2(0, 1.0f);
->>>>>>> origin/main
 
         StartCoroutine(updown()); //페이드 인 시작
     }
