@@ -1,18 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WalkShakePhone : MonoBehaviour
 {
     public GameObject phone;
+    public GameObject walkNum;
     
     Vector2 moveVelocity;
+    int walkNumText;
 
     // Start is called before the first frame update
     void Start()
     {
+        walkNumText = 0;
         phone = GameObject.Find("Phone");
-        
+        walkNum = GameObject.Find("WalkNum");
+        moveVelocity = new Vector2(0, 1.0f);
     }
 
     // Update is called once per frame
@@ -23,7 +28,14 @@ public class WalkShakePhone : MonoBehaviour
 
     public void Shake()
     {
-        moveVelocity = new Vector2(0, 1.0f);
+        walkNumText += 500;
+        walkNum.GetComponent<Text>().text = walkNumText.ToString();
+
+        if(walkNumText==6000)
+        {
+            //씬 전환
+            Debug.Log("애니메이션 전환");
+        }
 
         StartCoroutine(updown()); //페이드 인 시작
     }
