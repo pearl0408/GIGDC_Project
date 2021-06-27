@@ -1,36 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-<<<<<<< HEAD
 using UnityEngine.UI;
-=======
->>>>>>> origin/main
 
 public class WalkShakePhone : MonoBehaviour
 {
     public GameObject phone;
-<<<<<<< HEAD
     public GameObject walkNum;
     
     Vector2 moveVelocity;
     int walkNumText;
-=======
-    
-    Vector2 moveVelocity;
->>>>>>> origin/main
 
     // Start is called before the first frame update
     void Start()
     {
-<<<<<<< HEAD
         walkNumText = 0;
         phone = GameObject.Find("Phone");
         walkNum = GameObject.Find("WalkNum");
         moveVelocity = new Vector2(0, 1.0f);
-=======
-        phone = GameObject.Find("Phone");
-        
->>>>>>> origin/main
     }
 
     // Update is called once per frame
