@@ -8,12 +8,15 @@ public class MakePlaylist : MonoBehaviour
     public int musicNum;
     public bool[] musicLlkeList = new bool[9];
     GameObject howManyMusic;
+    GameObject playMusic;
+    bool musicPlaying;
 
     // Start is called before the first frame update
     void Start()
     {
         musicNum = 0;
         howManyMusic = GameObject.Find("HowManyMusic");
+        musicPlaying = false;
     }
 
     // Update is called once per frame
@@ -36,5 +39,21 @@ public class MakePlaylist : MonoBehaviour
         }
 
         howManyMusic.GetComponent<Text>().text = "¥„¿∫ ∞Ó : " + musicNum + "∞≥";
+    }
+
+    public void MusicPlay(int musicIndex)
+    {
+        playMusic = GameObject.Find("Song" + musicIndex);
+        if(musicPlaying==false)
+        {
+            playMusic.GetComponent<AudioSource>().Play();
+            musicPlaying = true;
+        }
+        else
+        {
+            playMusic.GetComponent<AudioSource>().Pause();
+            musicPlaying = false;
+            Debug.Log("¿Ωæ« ∏ÿ√ﬂ±‚");
+        }
     }
 }
