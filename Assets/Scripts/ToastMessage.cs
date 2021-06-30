@@ -6,13 +6,7 @@ using UnityEngine.UI;
 public class ToastMessage : MonoBehaviour
 {
     Color c, tc; //배경과 택스트 칼라
-    public GameObject message; //텍스트
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-        
-    }
+    public Text message; //텍스트
     
     //페이드 인
     IEnumerator fadein()
@@ -53,17 +47,29 @@ public class ToastMessage : MonoBehaviour
 
         gameObject.SetActive(false); //SetActive=false
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     //음식광고를 클릭하면 실행(버튼 onClick)
-    public void Toast()
+    public void ToastButton1()
     {
         gameObject.SetActive(true); //SetActive=true
-        message = GameObject.Find("message"); //텍스트 찾기
+        //message = GameObject.Find("message"); //텍스트 찾기
+        message.text = "당일 점포 휴일";  //텍스트 변경
+        StartCoroutine(fadein()); //페이드 인 시작
+    }
+
+    public void ToastButton2()
+    {
+        gameObject.SetActive(true); //SetActive=true
+        //message = GameObject.Find("message"); //텍스트 찾기
+        message.text = "배달료 20,000원";  //텍스트 변경
+        StartCoroutine(fadein()); //페이드 인 시작
+    }
+
+    public void ToastButton3()
+    {
+        gameObject.SetActive(true); //SetActive=true
+        //message = GameObject.Find("message"); //텍스트 찾기
+        message.text = "평점 1.0";  //텍스트 변경
         StartCoroutine(fadein()); //페이드 인 시작
     }
 }
