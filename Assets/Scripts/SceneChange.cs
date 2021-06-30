@@ -11,7 +11,7 @@ public class SceneChange : MonoBehaviour
     //게임 새로하기
     public void StartNewGame()
     {
-        StartCoroutine(SceneChangeDelay("Opening", 1f));
+        StartCoroutine(SceneChangeDelay("Day1", 1f));
     }
 
     //게임 이어하기
