@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     public static GameManager instance; //싱글톤 패턴을 사용하기 위한 전역 변수
 
     public int saveDay; //마지막으로 저장된 에피소드 날짜
+    public string playlistTitle;
+    public ArrayList likeAlbumartList = new ArrayList();
 
     //시작과 동시에 싱글톤 구성
     void Awake()
