@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ShowUpMsg : MonoBehaviour
+public class SendMsgTCousin : MonoBehaviour
 {
     public Button touchPanel;
     public int Cnt;
