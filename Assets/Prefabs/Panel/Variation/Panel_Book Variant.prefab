@@ -114,8 +114,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -110}
-  m_SizeDelta: {x: 780, y: 825}
+  m_AnchoredPosition: {x: 0, y: -187.5}
+  m_SizeDelta: {x: 780, y: 980}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6660827245337075214
 CanvasRenderer:
@@ -165,7 +165,7 @@ PrefabInstance:
     - target: {fileID: 411264406000206120, guid: 20996f891a1bad245b986c982faf5e12,
         type: 3}
       propertyPath: m_Name
-      value: Panel_Book
+      value: Panel_Book Variant
       objectReference: {fileID: 0}
     - target: {fileID: 411264406000206121, guid: 20996f891a1bad245b986c982faf5e12,
         type: 3}
@@ -271,6 +271,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137925312537572327, guid: 20996f891a1bad245b986c982faf5e12,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20996f891a1bad245b986c982faf5e12, type: 3}
