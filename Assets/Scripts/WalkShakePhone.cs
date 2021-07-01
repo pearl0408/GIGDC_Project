@@ -17,13 +17,10 @@ public class WalkShakePhone : MonoBehaviour
     {
 
         walkNumText = 0;
-        phone = GameObject.Find("Phone");
+        phone = GameObject.Find("Phone_Day5");//<=여기 폰 프리팹의 이름을 입력
         
         walkNum = GameObject.Find("WalkNum");
-        moveVelocity = new Vector2(0, 1.0f);
-
-        phone = GameObject.Find("Phone");
-        
+        moveVelocity = new Vector2(0, 1.0f);       
     }
 
     // Update is called once per frame
