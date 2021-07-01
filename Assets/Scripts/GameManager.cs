@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public int saveDay; //마지막으로 저장된 에피소드 날짜
     public string playlistTitle;
     public ArrayList likeAlbumartList = new ArrayList();
+    public string searchFood;   //검색한 음식
 
     //시작과 동시에 싱글톤 구성
     void Awake()

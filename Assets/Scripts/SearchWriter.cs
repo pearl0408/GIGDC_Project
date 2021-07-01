@@ -6,13 +6,15 @@ using UnityEngine.UI;
 public class SearchWriter : MonoBehaviour
 {
     //작가 이름이 흩어져있는 스크립트
-    public char[] writerName = { '백', '희', '나', '이', '솝', '안', '데', '르', '센' }; //작가 이름
+    public char[] writerName = { '백', '희', '나', '이', '솝', '안', '데', '르', '센', '도', '서' }; //작가 이름
     public Button charButton;   //생성할 글자 버튼
 
     private float XPosition;    //랜덤 X 좌표(-300 ~ 300 사이)
     private float YPosition;    //랜덤 Y 좌표(-250 ~ 250 사이)
 
     public Text text_Keyword;   //키워드 입력창
+
+    public GameObject searchResultPanel;    //검색 결과 패널
 
     //게임이 시작하면
     void Start()
@@ -23,6 +25,16 @@ public class SearchWriter : MonoBehaviour
     //검색 버튼을 누를 때마다 검색어와 단어 위치가 초기화
     public void ResetButton()
     {
+        //모든 자식 오브젝트 삭제
+        var childButton = this.GetComponentsInChildren<Transform>();   //자식 오브젝트들을 가져옴
+        foreach (var iter in childButton)
+        {
+            if (iter != this.transform)
+            {
+                Destroy(iter.gameObject);   //부모 오브젝트가 아니라면 게임 오브젝트 삭제
+            }
+        }
+
         text_Keyword.text = "";  //검색창 초기화
 
         //글자 버튼들이 랜덤 위치에 생성됨
@@ -47,5 +59,19 @@ public class SearchWriter : MonoBehaviour
     {
         string text = myText.GetComponent<Text>().text;
         text_Keyword.text += text;    //검색어 텍스트에 자신의 텍스트를 추가함
+    }
+
+    //검색 버튼을 누르면 검색한 이름이 맞는지 확인하고 동작하는 함수(버튼 이벤트)
+    public void CheckKeyword()
+    {
+        string inputText = text_Keyword.text;   //입력한 글자를 가져옴
+        if (inputText == "백희나도서")   //만약 올바르게 입력했다면
+        {
+            searchResultPanel.gameObject.SetActive(true);   //검색 결과창 활성화
+        }
+        else    //만약 검색 결과가 틀리다면
+        {
+            ResetButton();  //입력창 및 글자 위치 초기화
+        }
     }
 }
