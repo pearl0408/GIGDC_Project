@@ -733,7 +733,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1124673461}
     - target: {fileID: 2176314015994917380, guid: 5b13415fe9c7ce147b46b231a1bf585c,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
@@ -1191,6 +1191,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b13415fe9c7ce147b46b231a1bf585c, type: 3}
+--- !u!1 &1124673461 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1872509024611042532, guid: dcc9cad2bcf35c44a8799e13d1847104,
+    type: 3}
+  m_PrefabInstance: {fileID: 71222483130422217}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1142124877 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2056315947828194910, guid: 7b06bf355d004b349b63f5e9cf35a1a7,
@@ -1214,6 +1220,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Panel_Health
+      objectReference: {fileID: 0}
+    - target: {fileID: 1872509024611042532, guid: dcc9cad2bcf35c44a8799e13d1847104,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1872509024611042535, guid: dcc9cad2bcf35c44a8799e13d1847104,
         type: 3}
