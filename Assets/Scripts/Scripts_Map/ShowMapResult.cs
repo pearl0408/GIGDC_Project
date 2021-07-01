@@ -9,7 +9,9 @@ public class ShowMapResult : MonoBehaviour
     public Button searchBtn; // 검색 버튼
     public InputField inputTxt; // 검색 영역
     public Text resultTxt; // 검색 텍스트
-    public GameObject resultImg, resultPanel;
+    public GameObject resultPanel;
+    public Sprite noAnswer, milkyResult, homeBack; //검색결과 이미지
+    public GameObject panelMap; //맵 패널
 
     //private UnityEngine.TouchScreenKeyboard keyboard; // 모바일 키보드 불러오기
     //public static string keyboardText = ""; //입력값 초기화 
@@ -32,12 +34,21 @@ public class ShowMapResult : MonoBehaviour
     {
         if (resultTxt.text == "MILKY" || resultTxt.text == "milky" || resultTxt.text == "밀키" || resultTxt.text == "Milky")
         {
-            resultImg.SetActive(true);
+            //resultImg.SetActive(true);
             resultPanel.SetActive(true);
+            panelMap.GetComponent<Image>().sprite = milkyResult;
+        }
+        else
+        {
+            panelMap.GetComponent<Image>().sprite = noAnswer;
         }
      
         yield return new WaitForSeconds(0.01f); //0.01초 딜레이
     }
 
-
+    public void backHome()
+    {
+        panelMap.GetComponent<Image>().sprite = homeBack;
+        resultPanel.SetActive(false);
+    }
 }
