@@ -8,6 +8,7 @@ public class WalkShakePhone : MonoBehaviour
 {
     public GameObject phone;
     public GameObject walkNum;
+    public GameObject success;
     
     Vector2 moveVelocity;
     int walkNumText;
@@ -20,7 +21,9 @@ public class WalkShakePhone : MonoBehaviour
         phone = GameObject.Find("Phone_Day5");//<=여기 폰 프리팹의 이름을 입력
         
         walkNum = GameObject.Find("WalkNum");
-        moveVelocity = new Vector2(0, 1.0f);       
+        moveVelocity = new Vector2(0, 1.0f);
+        success = GameObject.Find("Success");
+        success.SetActive(false);
     }
 
     // Update is called once per frame
@@ -38,6 +41,7 @@ public class WalkShakePhone : MonoBehaviour
         {
             //씬 전환
             Debug.Log("애니메이션 전환");
+            success.SetActive(true);
         }
 
         moveVelocity = new Vector2(0, 1.0f);
