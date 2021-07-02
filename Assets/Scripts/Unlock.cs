@@ -4,42 +4,35 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class Unlock : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class Unlock : MonoBehaviour, IDragHandler, IEndDragHandler
 {
-    public Vector2 startPosition;
-    Vector2 endPosition;
-
-    public GameObject unlockPanel;
+    public Vector2 startPosition;//슬라이드 핸들러 시작 위치
+    public GameObject unlockPanel;//잠금화면 패널
 
     // Start is called before the first frame update
     void Start()
     {
-        startPosition = transform.position;
-        unlockPanel = GameObject.Find("Panel_Lock");
+        startPosition = transform.position;//시작 위치
+        unlockPanel = GameObject.Find("Panel_Lock");//패널 지정
     }
 
     // Update is called once per frame
     void Update()
     {
-        //if(Input.GetMouseButtonDown)
-    }
-
-    void IBeginDragHandler.OnBeginDrag(PointerEventData eventData)
-    {
-        //startPosition = eventData.position;
+        
     }
 
     void IDragHandler.OnDrag(PointerEventData eventData)
     {
+        //뒤로 슬라이더 핸들러가 왼쪽으로 가지 않을 때
         if(eventData.position.x>startPosition.x)
         {
-            transform.position = new Vector2(eventData.position.x, transform.position.y);   
-            //Debug.Log(eventData.position.x);
+            transform.position = new Vector2(eventData.position.x, transform.position.y);//마우스를 따라 움직이는 핸들러
         }
+        //잠금 해제
         if(eventData.position.x>770)
         {
-            unlockPanel.SetActive(false);
-            //Debug.Log("hey");
+            unlockPanel.SetActive(false);//패널 끄기
         }
         
     }
@@ -47,16 +40,14 @@ public class Unlock : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
     void IEndDragHandler.OnEndDrag(PointerEventData eventData)
     {
         if(eventData.position.x<770)
-        {
-            endPosition = eventData.position;
-            float distance = endPosition.x - startPosition.x;
-            StartCoroutine(reposition(distance));
+        {          
+            StartCoroutine(reposition());//돌아가기
         }
     }
 
-    IEnumerator reposition(float distance)
+    //첫 위치로 돌아가기
+    IEnumerator reposition()
     {
-        Debug.Log("들어옴");
         while(transform.position.x>startPosition.x)
         {
             Debug.Log(transform.position.x);
