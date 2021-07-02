@@ -6,11 +6,13 @@ using UnityEngine.UI;
 public class DragNotice : MonoBehaviour
 {
     Vector2 startPos;
+    bool updown;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        //alarmCenter = this.gameObject;
+        updown = false;
     }
 
     // Update is called once per frame
@@ -27,14 +29,13 @@ public class DragNotice : MonoBehaviour
 
             //위로 스와이프
             if (startPos.y > 299 && startPos.y < 330 && swipeLength > 10 && transform.position.y < 1000)
-            {
+            {                
                 StartCoroutine(swipe(1));
-                
             }
             //아래로 스와이프
             else if (startPos.y > 1592 && startPos.y < 1660 && swipeLength < -10 && transform.position.y > 1000)
             {
-                StartCoroutine(swipe(-1));               
+                StartCoroutine(swipe(-1));
             }
         }
     }
