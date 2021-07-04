@@ -5,15 +5,15 @@ using UnityEngine.UI;
 
 public class SendMsgTCousin : MonoBehaviour
 {
-    public Button touchPanel;
-    public int Cnt;
-    public GameObject Msg1, Msg2, Msg3;
+    public Button touchPanel; // 화면 터치 영역
+    public int Cnt; // 화면 터치 횟수 
+    public GameObject Msg1, Msg2, Msg3; // 메세지
 
     // Start is called before the first frame update
     void Start()
     {
-        Cnt = 0;
-        touchPanel.onClick.AddListener(touchOnce);
+        Cnt = 0; // 횟수 0번으로 시작
+        touchPanel.onClick.AddListener(touchOnce); // 터치 작동하게 하는 함수
     }
 
     IEnumerator touchCnt()
@@ -22,17 +22,14 @@ public class SendMsgTCousin : MonoBehaviour
 
         if(Cnt == 1)
          {
-            Debug.Log("문자1 터치");
             Msg1.SetActive(true);
         }
         if (Cnt == 2)
         {
-            Debug.Log("문자2 터치");
             Msg2.SetActive(true);
          }
         if (Cnt == 3)
         {
-            Debug.Log("문자3 터치");
             Msg3.SetActive(true);
         }
         if (Cnt == 4)
@@ -50,9 +47,4 @@ public class SendMsgTCousin : MonoBehaviour
         StartCoroutine(touchCnt());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
