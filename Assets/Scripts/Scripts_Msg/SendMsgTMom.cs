@@ -11,6 +11,7 @@ public class SendMsgTMom : MonoBehaviour
 
     public Button sendBtn;  // 전송 버튼
     public GameObject showMsg; // 화면상 메세지
+    public GameObject blockMsg; // 뒤로가기 막는 패널
 
     // Start is called before the first frame update
     void Start()
@@ -39,5 +40,6 @@ public class SendMsgTMom : MonoBehaviour
     public void clikedBtn()
     {
         showMsg.SetActive(true);
+        blockMsg.SetActive(false);
     }
 }
