@@ -5,15 +5,17 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 
-public class OpeningAnimation : MonoBehaviour, IDragHandler, IEndDragHandler
+public class OpeningAnimation : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHandler
 {
     private float speed = 3f;
     public GameObject minute;
+    Transform startAngle;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        startAngle = minute.transform;
+        var startAngledd = startAngle.rotation;
     }
 
     // Update is called once per frame
@@ -21,7 +23,10 @@ public class OpeningAnimation : MonoBehaviour, IDragHandler, IEndDragHandler
     {
         
     }
+    void IBeginDragHandler.OnBeginDrag(PointerEventData eventData)
+    {
 
+    }
     void IDragHandler.OnDrag(PointerEventData eventData)
     {
         Debug.Log("µé¾î¿È");
