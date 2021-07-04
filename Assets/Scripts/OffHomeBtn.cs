@@ -23,7 +23,7 @@ public class OffHomeBtn : MonoBehaviour
     {
         //onPanelName = name;
         onPanel = GameObject.Find("Panel_" + name);
-        Debug.Log(name);
+        
     }
 
     public void backHome()

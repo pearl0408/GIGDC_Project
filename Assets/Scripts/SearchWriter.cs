@@ -67,6 +67,7 @@ public class SearchWriter : MonoBehaviour
         string inputText = text_Keyword.text;   //입력한 글자를 가져옴
         if (inputText == "백희나도서")   //만약 올바르게 입력했다면
         {
+            text_Keyword.text = "";  //텍스트 삭제
             searchResultPanel.gameObject.SetActive(true);   //검색 결과창 활성화
         }
         else    //만약 검색 결과가 틀리다면

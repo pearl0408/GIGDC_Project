@@ -40,6 +40,7 @@ public class SearchFood : MonoBehaviour
         string searchKey = text_Keyword.text;   //검색할 텍스트를 가져옴
         if (searchKey != "") //만약 공백이 아니라면
         {
+            text_Keyword.text = "";  //텍스트 삭제
             searchResultPanel.gameObject.SetActive(true);   //검색 결과창 활성화
         }
     }
