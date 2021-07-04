@@ -6,13 +6,13 @@ using UnityEngine.UI;
 public class DragNotice : MonoBehaviour
 {
     Vector2 startPos;
-    bool updown;
+    
 
     // Start is called before the first frame update
     void Start()
     {
         //alarmCenter = this.gameObject;
-        updown = false;
+        
     }
 
     // Update is called once per frame

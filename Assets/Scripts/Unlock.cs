@@ -8,12 +8,14 @@ public class Unlock : MonoBehaviour, IDragHandler, IEndDragHandler
 {
     public Vector2 startPosition;//슬라이드 핸들러 시작 위치
     public GameObject unlockPanel;//잠금화면 패널
+    GameObject alarmTalkImg;
 
     // Start is called before the first frame update
     void Start()
     {
         startPosition = transform.position;//시작 위치
         unlockPanel = GameObject.Find("Panel_Lock");//패널 지정
+        alarmTalkImg = GameObject.Find("alarmTalk");
     }
 
     // Update is called once per frame
@@ -32,6 +34,7 @@ public class Unlock : MonoBehaviour, IDragHandler, IEndDragHandler
         //잠금 해제
         if(eventData.position.x>770)
         {
+            alarmTalkImg.GetComponent<StartAlarmTalk>().alarmTalk();
             unlockPanel.SetActive(false);//패널 끄기
         }
         
@@ -55,4 +58,28 @@ public class Unlock : MonoBehaviour, IDragHandler, IEndDragHandler
             yield return new WaitForSeconds(0.01f); //0.01초 딜레이
         }
     }
+
+    /*public void alarmTalk()
+    {
+        StartCoroutine(downAndup());
+    }*/
+
+    /*IEnumerator downAndup()
+    {
+        yield return new WaitForSeconds(1.0f);
+
+        while (transform.position.y > 954)
+        {
+            alarmTalkImg.transform.Translate(0, -50, 0);
+            yield return new WaitForSeconds(0.01f); //0.01초 딜레이
+        }
+
+        yield return new WaitForSeconds(2.0f);
+
+        while (transform.position.y < 897)
+        {
+            alarmTalkImg.transform.Translate(0, 50, 0);
+            yield return new WaitForSeconds(0.01f); //0.01초 딜레이
+        }
+    }*/
 }
