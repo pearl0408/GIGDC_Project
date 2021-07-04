@@ -5,17 +5,43 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 
-public class OpeningAnimation : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDragHandler
+public class OpeningAnimation : MonoBehaviour
 {
-    private float speed = 3f;
-    public GameObject minute;
-    Transform startAngle;
+    public bool Clockdown;
+    GameObject minute;
+    GameObject hour;
+
+    float startTime;
+    public float thisTime;
+    public float totalTime;
+    public Sprite[] panelImages = new Sprite[3];
+    int index;
+    bool goin;
+
+    public float fadeAlpha;
+
+    GameObject ImagePanel;
+    GameObject lightPanel;
+
+    GameObject nextPanel;
+    //bool nextAnimationStart;
 
     // Start is called before the first frame update
     void Start()
     {
-        startAngle = minute.transform;
-        var startAngledd = startAngle.rotation;
+        Clockdown = false;
+        minute = GameObject.Find("Minute");
+        hour = GameObject.Find("Hour");
+        ImagePanel = GameObject.Find("Pic");
+        index = 0;
+        ImagePanel.GetComponent<Image>().sprite = panelImages[index];
+        goin = true;
+        lightPanel = GameObject.Find("Blind");
+        lightPanel.GetComponent<Animator>().speed = 0.0f;
+
+        nextPanel = GameObject.Find("TalkFriend");
+        nextPanel.SetActive(false);
+        //nextAnimationStart = false;
     }
 
     // Update is called once per frame
@@ -23,23 +49,58 @@ public class OpeningAnimation : MonoBehaviour, IDragHandler, IEndDragHandler, IB
     {
         
     }
-    void IBeginDragHandler.OnBeginDrag(PointerEventData eventData)
-    {
 
-    }
-    void IDragHandler.OnDrag(PointerEventData eventData)
+    public void PointerDown()
     {
-        Debug.Log("들어옴");
-        //transform.Rotate(0f, 0f, Input.GetAxis("Mouse X") * Input.GetAxis("Mouse Y") * speed);
-        //transform.Rotate(-Input.GetAxis("Mouse Y") , 0f, 0f);
-
-        var dir = new Vector3(eventData.position.x, eventData.position.y, 0) - minute.transform.position;//마우스 방향 계산하기
-        var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;//회전각 계산하기
-        minute.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);//화살표 회전각 바꾸기
+        Clockdown = true;
+        startTime = Time.time;
+        lightPanel.GetComponent<Animator>().speed = 1.0f;
+        StartCoroutine(ClockRotate());
+        //StartCoroutine(lightSet());
     }
 
-    void IEndDragHandler.OnEndDrag(PointerEventData eventData)
+    public void PointerUp()
     {
+        Clockdown = false;
+        totalTime += thisTime;
+        lightPanel.GetComponent<Animator>().speed = 0.0f;
+    }
 
+    IEnumerator ClockRotate()
+    {
+        while (Clockdown)
+        {
+            //시계돌리기
+            minute.transform.Rotate(new Vector3(0f, 0f, -360f) * Time.deltaTime);
+            hour.transform.Rotate(new Vector3(0f, 0f, -60f) * Time.deltaTime);
+            lightPanel.GetComponent<Image>().color = new Color(0, 0, 0, fadeAlpha);
+
+            //타이머
+            thisTime = Time.time - startTime;
+
+            if ((totalTime + thisTime) > 3.0f && goin)
+            {
+                //패널 변경
+                index++;
+                ImagePanel.GetComponent<Image>().sprite = panelImages[index];
+                index++;
+                goin = false;
+            }
+
+            if ((totalTime + thisTime) > 6.0f)
+            {
+                ImagePanel.GetComponent<Image>().sprite = panelImages[index];
+            }
+
+            if((totalTime + thisTime) > 9.0f)
+            {
+                //카톡 패널 setActive
+                nextPanel.SetActive(true);
+                gameObject.SetActive(false);
+                //nextAnimationStart = true;
+            }
+
+            yield return new WaitForSeconds(0.0001f);
+        }
     }
 }
