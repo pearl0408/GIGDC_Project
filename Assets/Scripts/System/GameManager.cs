@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     public ArrayList likeAlbumartList = new ArrayList();
     public string searchFood;   //검색한 음식
     public string orderFood;   //주문한 음식
+    public string selectBook;   //선택한 책
+    public string selectMovie;  //선택한 영화
 
     //시작과 동시에 싱글톤 구성
     void Awake()

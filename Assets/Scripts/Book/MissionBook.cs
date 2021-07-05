@@ -14,5 +14,17 @@ public class MissionBook : MonoBehaviour
         int randomInt = Random.Range(0, missionBookList.Length);    //랜덤 인덱스 생성
 
         this.gameObject.GetComponent<Image>().sprite = missionBookList[randomInt];  //랜덤 인덱스의 스프라이트로 변경
+
+        switch(randomInt)
+        {
+            case 0:
+                GameManager.instance.selectBook = "bread";  break;
+            case 1:
+                GameManager.instance.selectBook = "cat"; break;
+            case 2:
+                GameManager.instance.selectBook = "chicken"; break;
+            case 3:
+                GameManager.instance.selectBook = "dinner"; break;
+        }
     }
 }

@@ -11,6 +11,7 @@ public class TypingAnswer : MonoBehaviour
     public GameObject player_Message;  //주인공의 대사
     public GameObject playerAnswerPanel; //플레이어 대사 선택 버튼
     public Image BG;    //배경 이미지
+    public GameObject breakLine;    //깨진 이미지
 
     public Image mom_Image;   //엄마 이미지
     public Image player_Image;    //주인공 이미지
@@ -20,6 +21,9 @@ public class TypingAnswer : MonoBehaviour
 
     private float typingSpeed = 0.2f;  //타이핑 속도
     private float waitSpeed = 2f;  //대화창 텀
+
+    Color currentColor = new Color(1f, 1f, 1f, 1f); //현재 배경 색깔
+    Color changeColor;  //바꿀 배경 색깔
 
     public string[] momAnswerList = { "우리 때는 다 그랬어!" , "나쁘지 않은 대학, 학과면서 뭐가 문제야",
         "살다 보면 다 좋아져", "쉬면 경쟁에서 뒤처지는 거야", "분명 그렇게 가면 실패할걸",
@@ -33,7 +37,7 @@ public class TypingAnswer : MonoBehaviour
         //player_Text = player_Message.gameObject.transform.GetChild(0).gameObejct.GetComponent<Text>(); //텍스트를 가져옴
 
         conflictFlow = 0;   //다툼 흐름
-
+        breakLine.gameObject.SetActive(false);
         //다툼 시작
         StartCoroutine(momTyping(mom_Message, momAnswerList[conflictFlow]));
     }
@@ -81,6 +85,11 @@ public class TypingAnswer : MonoBehaviour
 
         if (conflictFlow == 7)  //대화가 끝났다면(씬 이동)
         {
+            playerAnswerPanel.gameObject.SetActive(false);
+
+            //엄마와 주인공 사이 깨짐
+            breakLine.gameObject.SetActive(true);
+
             //엄마와 주인공 뒤 돌음
             mom_Image.GetComponent<Transform>().localScale = new Vector3(-1f, 1f, 1f);
             player_Image.GetComponent<Transform>().localScale = new Vector3(-1f, 1f, 1f);
@@ -88,6 +97,7 @@ public class TypingAnswer : MonoBehaviour
         else
         {
             //타이핑이 끝나면 엄마 메세지 타이핑
+            currentColor = BG.color;
             StartCoroutine(momTyping(mom_Message, momAnswerList[conflictFlow]));
         }
     }
@@ -197,19 +207,25 @@ public class TypingAnswer : MonoBehaviour
         switch (flow)
         {
             case 0:
-                BG.color = new Color(255f/255f, 255f/255f, 255f/255f, 255f/255f); break;
+                BG.color = Color.white; break;
             case 1:
-                BG.color = new Color(255f / 255f, 230f / 255f, 230f / 255f, 255f / 255f); break;
+                changeColor = new Color(1f, 0.9f, 0.9f, 1f);
+                BG.color = Color.Lerp(currentColor, changeColor, 3f); break;
             case 2:
-                BG.color = new Color(255f / 255f, 200f / 255f, 200f / 255f, 255f / 255f); break;
+                changeColor = new Color(1f, 0.8f, 0.8f, 1f);
+                BG.color = Color.Lerp(currentColor, changeColor, 3f); break;
             case 3:
-                BG.color = new Color(255f / 255f, 150f / 255f, 150f / 255f, 255f / 255f); break;
+                changeColor = new Color(1f, 0.65f, 0.65f, 1f);
+                BG.color = Color.Lerp(currentColor, changeColor, 3f); break;
             case 4:
-                BG.color = new Color(255f / 255f, 100 / 255f, 100f / 255f, 255f / 255f); break;
+                changeColor = new Color(1f, 0.5f, 0.5f, 1f);
+                BG.color = Color.Lerp(currentColor, changeColor, 3f); break;
             case 5:
-                BG.color = new Color(255f / 255f, 50f / 255f, 50f / 255f, 255f / 255f); break;
+                changeColor = new Color(1f, 0.25f, 0.25f, 1f);
+                BG.color = Color.Lerp(currentColor, changeColor, 3f); break;
             case 6:
-                BG.color = new Color(255f / 255f, 0f / 255f, 0f / 255f, 255f / 255f); break;
+                changeColor = new Color(1f, 0f, 0f, 1f);
+                BG.color = Color.Lerp(currentColor, changeColor, 3f); break;
         }
     }
 }
