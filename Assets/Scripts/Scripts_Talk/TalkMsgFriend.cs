@@ -19,6 +19,7 @@ public class TalkMsgFriend : MonoBehaviour
     public Button copyMsgBtn; // 친구 답장을 복사하기 위한 버튼
 
     public GameObject activeMsg; // 메세지 기능 활성화
+    public GameObject intentObject; // 복사 메세지 확인됨
 
     // 1.친구 A와의 카톡을 들어가면 자동으로 타이핑 입력됨(0)
     // 2.전송 버튼을 누르면 메시지가 전송됨(0)
@@ -100,6 +101,9 @@ public class TalkMsgFriend : MonoBehaviour
         toastMsg.SetActive(false);
 
         activeMsg.SetActive(true);
+
+        intentObject.SetActive(true);
+
 
         //StopAllCoroutines();
 
