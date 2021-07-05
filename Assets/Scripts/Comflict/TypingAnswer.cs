@@ -103,6 +103,10 @@ public class TypingAnswer : MonoBehaviour
             StartCoroutine(playerTyping(player_Message, selectText)); //플레이어 답변 타이핑
             conflictFlow++; //대화 흐름 1 증가
         }
+        else
+        { // 오답이면 진동
+            Vibration.Vibrate(100); // 진동
+        }
     }
 
     //플레이어가 선택한 텍스트가 정답과 일치하는지 확인하는 함수

@@ -13,9 +13,6 @@ public class ShowMapResult : MonoBehaviour
     public Sprite noAnswer, milkyResult, homeBack; //검색결과 이미지
     public GameObject panelMap; //맵 패널
 
-    //private UnityEngine.TouchScreenKeyboard keyboard; // 모바일 키보드 불러오기
-    //public static string keyboardText = ""; //입력값 초기화 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +38,7 @@ public class ShowMapResult : MonoBehaviour
         else
         {
             panelMap.GetComponent<Image>().sprite = noAnswer;
+            Vibration.Vibrate(100); // 진동 함수
         }
      
         yield return new WaitForSeconds(0.01f); //0.01초 딜레이

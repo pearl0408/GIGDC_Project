@@ -62,6 +62,7 @@ public class TalkMsgFriend : MonoBehaviour
     public void clikedBtn()
     {
         m_TypingText.text = "";
+        Vibration.Vibrate(100); // 진동함수
         myMsg1.SetActive(true);
 
         StartCoroutine(showFreindMsg1());
@@ -71,7 +72,7 @@ public class TalkMsgFriend : MonoBehaviour
     IEnumerator showFreindMsg1()
     {
         yield return new WaitForSeconds(3.0f);
-
+        Vibration.Vibrate(100); // 진동함수
         yourMsg1.SetActive(true);
 
         //친구 메세지 누르면 복사하게 만든다
@@ -82,6 +83,7 @@ public class TalkMsgFriend : MonoBehaviour
     // 친구의 답장을 클릭했을 때의 토스트 메세지 받아오기 
     public void clikedFriendMsg1()
     {
+        Vibration.Vibrate(100); // 진동함수
         StartCoroutine(Toast());
 
     }

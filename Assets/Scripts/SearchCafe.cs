@@ -73,6 +73,7 @@ public class SearchCafe : MonoBehaviour
         }
         else    //만약 검색 결과가 틀리다면
         {
+            Vibration.Vibrate(100); // 진동함수
             ResetButton();  //입력창 및 글자 위치 초기화
         }
     }

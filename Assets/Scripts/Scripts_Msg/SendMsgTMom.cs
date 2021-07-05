@@ -39,6 +39,7 @@ public class SendMsgTMom : MonoBehaviour
 
     public void clikedBtn()
     {
+        Vibration.Vibrate(100); // 진동함수
         showMsg.SetActive(true);
         blockMsg.SetActive(false);
     }

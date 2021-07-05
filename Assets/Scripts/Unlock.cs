@@ -36,6 +36,7 @@ public class Unlock : MonoBehaviour, IDragHandler, IEndDragHandler
         {
             alarmTalkImg.GetComponent<StartAlarmTalk>().alarmTalk();
             unlockPanel.SetActive(false);//패널 끄기
+            Vibration.Vibrate(100); // 진동
         }
         
     }

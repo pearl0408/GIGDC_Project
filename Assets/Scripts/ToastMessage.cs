@@ -54,6 +54,7 @@ public class ToastMessage : MonoBehaviour
         gameObject.SetActive(true); //SetActive=true
         //message = GameObject.Find("message"); //텍스트 찾기
         message.text = "당일 점포 휴일";  //텍스트 변경
+        Vibration.Vibrate(100); // 진동함수
         StartCoroutine(fadein()); //페이드 인 시작
     }
 
@@ -62,6 +63,7 @@ public class ToastMessage : MonoBehaviour
         gameObject.SetActive(true); //SetActive=true
         //message = GameObject.Find("message"); //텍스트 찾기
         message.text = "배달료 20,000원";  //텍스트 변경
+        Vibration.Vibrate(100); // 진동함수
         StartCoroutine(fadein()); //페이드 인 시작
     }
 
@@ -70,6 +72,7 @@ public class ToastMessage : MonoBehaviour
         gameObject.SetActive(true); //SetActive=true
         //message = GameObject.Find("message"); //텍스트 찾기
         message.text = "평점 1.0";  //텍스트 변경
+        Vibration.Vibrate(100); // 진동함수
         StartCoroutine(fadein()); //페이드 인 시작
     }
 }

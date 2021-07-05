@@ -23,6 +23,7 @@ public class SelectInDM : MonoBehaviour
     // 터치 코루틴 작동 시작
     public void touchOnce()
     {
+        Vibration.Vibrate(100); // 진동 함수
         StartCoroutine(touchCnt());
     }
 
@@ -78,7 +79,7 @@ public class SelectInDM : MonoBehaviour
     // 오답 클릭 시 버튼 이벤트
     public void wrongClicked()
     {
-       
+        Vibration.Vibrate(200); // 진동 함수
     }
 
     // 정답 클릭 시 버튼 이벤트 
