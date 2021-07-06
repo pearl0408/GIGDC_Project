@@ -16,19 +16,21 @@ public class AudioManage : MonoBehaviour
     private float BGVol;
     private float EFVol;
 
-    private bool isVibOff;   //진동이 꺼져있는지 확인하는 변수
+    //private bool isVibOff;   //진동이 꺼져있는지 확인하는 변수
 
+ 
     void Start()
     {
+     
         // PlayerPrefs에 저장된 값을 가져옴(값이 비었다면 1을 가져옴)
         BGVol = PlayerPrefs.GetFloat("BGVol", 1f);
         EFVol = PlayerPrefs.GetFloat("EFVol", 1f);
-        isVibOff = PlayerPrefs.GetInt("isVibOff", 0) == 1;
+        Vibration.isVibOff = PlayerPrefs.GetInt("isVibOff", 0) == 1;
 
         //저장된 값을 반영함
         BGSlider.value = BGVol;
         EFSlider.value = EFVol;
-        VibOff.isOn = isVibOff == true ? true : false;
+        VibOff.isOn = Vibration.isVibOff == true ? true : false;
 
         //슬라이더의 값을 시작화면 배경음악 오디오에 반영함
         BGAudio.volume = BGSlider.value;
@@ -57,8 +59,8 @@ public class AudioManage : MonoBehaviour
     public void VibrateToggle()
     {
         //값을 유지하기 위해 bool 변수에 넣은 후 PlayerPrefs()을 이용하여 저장함
-        isVibOff = VibOff.isOn;
-        int onoff = isVibOff == true ? 1 : 0;
+        Vibration.isVibOff = VibOff.isOn;
+        int onoff = Vibration.isVibOff == true ? 1 : 0;
         PlayerPrefs.SetInt("isVibOff", onoff);
     }
 }

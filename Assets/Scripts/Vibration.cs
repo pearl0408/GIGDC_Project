@@ -14,9 +14,10 @@ public static class Vibration
     public static AndroidJavaObject vibrator;
 #endif
 
+    public static bool isVibOff = false; // 진동 onOff기능
     public static void Vibrate()
     {
-        if (isAndroid())
+        if (isAndroid()&& !isVibOff)
             vibrator.Call("vibrate");
         else
             Handheld.Vibrate();
