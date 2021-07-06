@@ -65,7 +65,7 @@ public class WalkShakePhone : MonoBehaviour
         {
             phone.transform.Translate(moveVelocity * 10.0f * Time.deltaTime);
             this.transform.Translate(moveVelocity * 10.0f * Time.deltaTime);
-
+            Vibration.Vibrate(100);// 진동 함수
             yield return new WaitForSeconds(0.001f); //0.001초 딜레이
         }
 
@@ -74,6 +74,7 @@ public class WalkShakePhone : MonoBehaviour
         {
             phone.transform.Translate(-1.0f*moveVelocity * 10.0f * Time.deltaTime);
             this.transform.Translate(-1.0f * moveVelocity * 10.0f * Time.deltaTime);
+            Vibration.Vibrate(100);// 진동 함수
             yield return new WaitForSeconds(0.001f); //0.001초 딜레이
         }
 
@@ -88,6 +89,7 @@ public class WalkShakePhone : MonoBehaviour
         {
             phone.transform.Translate(-1.0f * moveVelocity * 10.0f * Time.deltaTime);
             this.transform.Translate(-1.0f * moveVelocity * 10.0f * Time.deltaTime);
+            Vibration.Vibrate(100);// 진동 함수
             yield return new WaitForSeconds(0.001f); //0.001초 딜레이
         }
 
@@ -96,7 +98,7 @@ public class WalkShakePhone : MonoBehaviour
         {
             phone.transform.Translate(moveVelocity * 10.0f * Time.deltaTime);
             this.transform.Translate(moveVelocity * 10.0f * Time.deltaTime);
-
+            Vibration.Vibrate(100);// 진동 함수
             yield return new WaitForSeconds(0.001f); //0.001초 딜레이
         }
 
