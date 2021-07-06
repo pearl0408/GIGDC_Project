@@ -30,7 +30,7 @@ public class AudioManage : MonoBehaviour
         //저장된 값을 반영함
         BGSlider.value = BGVol;
         EFSlider.value = EFVol;
-        VibOff.isOn = Vibration.isVibOff == true ? true : false;
+        VibOff.isOn = Vibration.isVibOff == true ? false : true;
 
         //슬라이더의 값을 시작화면 배경음악 오디오에 반영함
         BGAudio.volume = BGSlider.value;
