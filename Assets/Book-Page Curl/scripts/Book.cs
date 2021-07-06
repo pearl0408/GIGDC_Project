@@ -17,7 +17,11 @@ public class Book : MonoBehaviour {
     [SerializeField]
     RectTransform BookPanel;
     public Sprite background;
+    int index;
+    public GameObject nextPanel;
     public Sprite[] bookPages;
+    public Sprite[] bookCover = new Sprite[4];
+    public Sprite[] bookSecondPag = new Sprite[4];
     public bool interactable=true;
     public bool enableShadowEffect=true;
     //represent the index of the sprite shown in the right page
@@ -69,7 +73,31 @@ public class Book : MonoBehaviour {
 
     void Start()
     {
-        if (!canvas) canvas=GetComponentInParent<Canvas>();
+        index = 0;//인덱스 초기화
+        //선택에 따라 북 커버, 다음장 설정하기
+        string BookName = GameManager.instance.selectBook;
+
+        if(BookName=="bread")
+        {
+            bookPages[0] = bookCover[0];
+            bookPages[2] = bookSecondPag[0];
+        }
+        else if(BookName == "cat")
+        {
+            bookPages[0] = bookCover[1];
+            bookPages[2] = bookSecondPag[1];
+        }
+        else if(BookName == "chicken")
+        {
+            bookPages[0] = bookCover[2];
+            bookPages[2] = bookSecondPag[2];
+        }
+        else if(BookName == "dinner")
+        {
+            bookPages[0] = bookCover[3];
+            bookPages[2] = bookSecondPag[3];
+        }
+            if (!canvas) canvas=GetComponentInParent<Canvas>();
         if (!canvas) Debug.LogError("Book should be a child to canvas");
 
         Left.gameObject.SetActive(false);
@@ -394,9 +422,33 @@ public class Book : MonoBehaviour {
         ShadowLTR.gameObject.SetActive(false);
         if (OnFlip != null)
             OnFlip.Invoke();
+
+        if (index > 5)
+        {
+            StartCoroutine(nextPanelGo());
+        }
+        
+        index++;
         //Debug.Log("넘김");
         //Debug.Log(bookPages.Length); =>13
     }
+    IEnumerator nextPanelGo()
+    {
+        float fadeAlpha = 1.0f;   //처음 알파값
+
+        //어두워지기
+        while (fadeAlpha > 0.0f)
+        {
+            fadeAlpha -= 0.01f;
+            yield return new WaitForSeconds(0.01f); //0.01초 딜레이
+            gameObject.GetComponent<Image>().color = new Color(gameObject.GetComponent<Image>().color.r, gameObject.GetComponent<Image>().color.g, gameObject.GetComponent<Image>().color.b, fadeAlpha);
+        }
+
+        nextPanel.SetActive(true);
+
+        gameObject.SetActive(false);
+    }
+    
     public void TweenBack()
     {
         if (mode == FlipMode.RightToLeft)
