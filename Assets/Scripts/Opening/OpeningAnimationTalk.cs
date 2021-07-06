@@ -21,6 +21,8 @@ public class OpeningAnimationTalk : MonoBehaviour
         posterBig.transform.localScale = new Vector3(0f, 0f, 0f);
         nextButton.SetActive(false);
         nextPanel.SetActive(false);
+
+        
     }
 
     // Update is called once per frame
