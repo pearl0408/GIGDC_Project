@@ -394,6 +394,8 @@ public class Book : MonoBehaviour {
         ShadowLTR.gameObject.SetActive(false);
         if (OnFlip != null)
             OnFlip.Invoke();
+        //Debug.Log("넘김");
+        //Debug.Log(bookPages.Length); =>13
     }
     public void TweenBack()
     {
