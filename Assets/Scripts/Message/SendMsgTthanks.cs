@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class SendMsgTthanks : MonoBehaviour
 {
-    public GameObject copyArea; // 복붙 패널
     public GameObject myMsg, yourMsg; // 메세지 변수
     public Button copyBtn,sendBtn; // 복사하기 버튼 
 
@@ -36,13 +35,9 @@ public class SendMsgTthanks : MonoBehaviour
         timer = 0;
         m_Message = "안녕하세요!매하일기 . . .";
 
-        // 활성화 되어 있다면
-        if (copyArea.activeSelf == true)
-        {
-            // 버튼 클릭하기
-            copyBtn.onClick.AddListener(clickedCopyBtn);
-           
-        }
+        // 버튼 클릭하기
+        copyBtn.onClick.AddListener(clickedCopyBtn);
+      
     }
 
     // 복붙하기 클릭할 시 변화

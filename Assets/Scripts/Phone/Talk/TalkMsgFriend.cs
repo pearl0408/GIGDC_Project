@@ -21,6 +21,8 @@ public class TalkMsgFriend : MonoBehaviour
     public GameObject activeMsg; // 메세지 기능 활성화
     public GameObject intentObject; // 복사 메세지 확인됨
 
+    public GameObject blockPanel; // 뒤로가기를 막는 블록 패널
+
     // 1.친구 A와의 카톡을 들어가면 자동으로 타이핑 입력됨(0)
     // 2.전송 버튼을 누르면 메시지가 전송됨(0)
     // 3.친구의 답장을 누르면 메시지가 복사됨(토스트 메시지 나타남)
@@ -104,10 +106,11 @@ public class TalkMsgFriend : MonoBehaviour
 
         activeMsg.SetActive(true);
 
+        // 학생회장 감사 메세지 번호 붙여넣기
         intentObject.SetActive(true);
 
-
-        //StopAllCoroutines();
+        //블록 패널 해제 
+        blockPanel.SetActive(false);
 
     }
 
