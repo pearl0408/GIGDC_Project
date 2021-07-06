@@ -8,10 +8,12 @@ public class Day3Panel3 : MonoBehaviour
     float fadeAlpha;
     public GameObject nextPanel;
     public GameObject nextButton;
+    public GameObject BGM;
 
     // Start is called before the first frame update
     void Start()
     {
+        BGM.GetComponent<AudioSource>().Stop();
         StartCoroutine(nextGo());
     }
 
@@ -26,7 +28,7 @@ public class Day3Panel3 : MonoBehaviour
             gameObject.GetComponent<Image>().color = new Color(gameObject.GetComponent<Image>().color.r, gameObject.GetComponent<Image>().color.g, gameObject.GetComponent<Image>().color.b, fadeAlpha);
         }
 
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(5.0f);
 
         fadeAlpha = 0.0f;   //처음 알파값
 

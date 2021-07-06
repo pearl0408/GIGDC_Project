@@ -54,10 +54,13 @@ public class Day6Panel1 : MonoBehaviour
             gameObject.GetComponent<Image>().color = new Color(gameObject.GetComponent<Image>().color.r, gameObject.GetComponent<Image>().color.g, gameObject.GetComponent<Image>().color.b, fadeAlpha);
             buildingL1.GetComponent<Image>().color = new Color(buildingL1.GetComponent<Image>().color.r, buildingL1.GetComponent<Image>().color.g, buildingL1.GetComponent<Image>().color.b, fadeAlpha);
             buildingR1.GetComponent<Image>().color = new Color(buildingR1.GetComponent<Image>().color.r, buildingR1.GetComponent<Image>().color.g, buildingR1.GetComponent<Image>().color.b, fadeAlpha);
+            buildingL2.GetComponent<Image>().color = new Color(buildingL2.GetComponent<Image>().color.r, buildingL2.GetComponent<Image>().color.g, buildingL2.GetComponent<Image>().color.b, fadeAlpha);
+            buildingR2.GetComponent<Image>().color = new Color(buildingR2.GetComponent<Image>().color.r, buildingR2.GetComponent<Image>().color.g, buildingR2.GetComponent<Image>().color.b, fadeAlpha);
             myPhone.GetComponent<Image>().color = new Color(myPhone.GetComponent<Image>().color.r, myPhone.GetComponent<Image>().color.g, myPhone.GetComponent<Image>().color.b, fadeAlpha);
+            myPosition.GetComponent<Image>().color = new Color(myPosition.GetComponent<Image>().color.r, myPosition.GetComponent<Image>().color.g, myPosition.GetComponent<Image>().color.b, fadeAlpha);
         }
 
-        yield return new WaitForSeconds(5.0f); //0.01초 딜레이
+        yield return new WaitForSeconds(3.0f); //0.01초 딜레이
 
         fadeAlpha = 1.0f;   //처음 알파값
 
@@ -69,7 +72,10 @@ public class Day6Panel1 : MonoBehaviour
             gameObject.GetComponent<Image>().color = new Color(gameObject.GetComponent<Image>().color.r, gameObject.GetComponent<Image>().color.g, gameObject.GetComponent<Image>().color.b, fadeAlpha);
             buildingL2.GetComponent<Image>().color = new Color(buildingL2.GetComponent<Image>().color.r, buildingL2.GetComponent<Image>().color.g, buildingL2.GetComponent<Image>().color.b, fadeAlpha);
             buildingR2.GetComponent<Image>().color = new Color(buildingR2.GetComponent<Image>().color.r, buildingR2.GetComponent<Image>().color.g, buildingR2.GetComponent<Image>().color.b, fadeAlpha);
+            buildingL1.GetComponent<Image>().color = new Color(buildingL1.GetComponent<Image>().color.r, buildingL1.GetComponent<Image>().color.g, buildingL1.GetComponent<Image>().color.b, fadeAlpha);
+            buildingR1.GetComponent<Image>().color = new Color(buildingR1.GetComponent<Image>().color.r, buildingR1.GetComponent<Image>().color.g, buildingR1.GetComponent<Image>().color.b, fadeAlpha);
             myPhone.GetComponent<Image>().color = new Color(myPhone.GetComponent<Image>().color.r, myPhone.GetComponent<Image>().color.g, myPhone.GetComponent<Image>().color.b, fadeAlpha);
+            myPosition.GetComponent<Image>().color = new Color(myPosition.GetComponent<Image>().color.r, myPosition.GetComponent<Image>().color.g, myPosition.GetComponent<Image>().color.b, fadeAlpha);
         }
 
         nextPanel.SetActive(true);

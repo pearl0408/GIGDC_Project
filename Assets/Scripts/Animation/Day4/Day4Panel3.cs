@@ -53,7 +53,7 @@ public class Day4Panel3 : MonoBehaviour
             yield return new WaitForSeconds(0.01f); //0.01√  µÙ∑π¿Ã
             gameObject.GetComponent<Image>().color = new Color(gameObject.GetComponent<Image>().color.r, gameObject.GetComponent<Image>().color.g, gameObject.GetComponent<Image>().color.b, fadeAlpha);
         }
-
+        food.GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(2.0f); //0.01√  µÙ∑π¿Ã
         camera.SetActive(true);
 
@@ -63,10 +63,10 @@ public class Day4Panel3 : MonoBehaviour
         yield return new WaitForSeconds(3.0f); //0.01√  µÙ∑π¿Ã
 
         float startPos = camerashut1.transform.position.y;
-        Debug.Log("¥Î±‚");
+        camera.GetComponent<AudioSource>().Play();
         while (startPos-camerashut1.transform.position.y<height)
         {
-            Debug.Log("π›∫ππÆ µÈæÓø»");
+            
             camerashut1.transform.Translate(new Vector2(0, -100));
             camerashut2.transform.Translate(new Vector2(0, 100));
             yield return new WaitForSeconds(0.01f); //0.01√  µÙ∑π¿Ã

@@ -17,6 +17,10 @@ public class Day1Panel4 : MonoBehaviour
 
     IEnumerator nextGo()
     {
+        gameObject.GetComponent<AudioSource>().Play();
+
+        yield return new WaitForSeconds(1.0f); //0.01초 딜레이
+
         fadeAlpha = 0.0f;   //처음 알파값
 
         while (fadeAlpha < 1.0f)
