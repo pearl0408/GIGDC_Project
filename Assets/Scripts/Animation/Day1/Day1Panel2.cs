@@ -7,6 +7,7 @@ public class Day1Panel2 : MonoBehaviour
 {
     float fadeAlpha;
     public GameObject nextPanel;
+    public GameObject DoorSound;
 
     // Start is called before the first frame update
     void Start()
@@ -26,12 +27,14 @@ public class Day1Panel2 : MonoBehaviour
             gameObject.GetComponent<Image>().color = new Color(gameObject.GetComponent<Image>().color.r, gameObject.GetComponent<Image>().color.g, gameObject.GetComponent<Image>().color.b, fadeAlpha);
         }
 
-        yield return new WaitForSeconds(5.0f); //0.01초 딜레이
+        gameObject.GetComponent<AudioSource>().Play();
+        yield return new WaitForSeconds(2.0f); //0.01초 딜레이
 
         //갑자기 어두워지기
         gameObject.GetComponent<Image>().color = new Color(0, 0, 0, 1);
+        DoorSound.GetComponent<AudioSource>().Play();
 
-        yield return new WaitForSeconds(2.0f); //0.01초 딜레이
+        yield return new WaitForSeconds(3.0f); //0.01초 딜레이
 
         nextPanel.SetActive(true);
         gameObject.SetActive(false);

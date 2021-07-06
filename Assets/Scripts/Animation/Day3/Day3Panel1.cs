@@ -54,8 +54,8 @@ public class Day3Panel1 : MonoBehaviour
             yield return new WaitForSeconds(0.01f); //0.01초 딜레이
             gameObject.GetComponent<Image>().color = new Color(gameObject.GetComponent<Image>().color.r, gameObject.GetComponent<Image>().color.g, gameObject.GetComponent<Image>().color.b, fadeAlpha);
         }
-
-        yield return new WaitForSeconds(5.0f); //0.01초 딜레이
+        gameObject.GetComponent<AudioSource>().Play();
+        yield return new WaitForSeconds(3.0f); //0.01초 딜레이
 
         fadeAlpha = 1.0f;   //처음 알파값
 

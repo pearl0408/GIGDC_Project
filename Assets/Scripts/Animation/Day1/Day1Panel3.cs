@@ -21,10 +21,20 @@ public class Day1Panel3 : MonoBehaviour
         width = gameObject.GetComponent<RectTransform>().rect.width;
         StartCoroutine(SceneStart());
         StartCoroutine(BGMove());
+        StartCoroutine(walkSound());
     }
+    IEnumerator walkSound()
+    {
+        while (Time.time - startTime < 20.0)
+        {
+            me.GetComponent<AudioSource>().Play();
+            yield return new WaitForSeconds(0.6f); //0.01√  µÙ∑π¿Ã
+        }
 
+    }
     IEnumerator BGMove()
     {
+        gameObject.GetComponent<AudioSource>().Play();
         startTime = Time.time;
         while (Time.time - startTime < 20.0)
         {
