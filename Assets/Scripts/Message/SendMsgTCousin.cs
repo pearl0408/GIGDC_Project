@@ -23,18 +23,23 @@ public class SendMsgTCousin : MonoBehaviour
         if(Cnt == 1)
          {
             Msg1.SetActive(true);
+            Vibration.Vibrate(100);
         }
         if (Cnt == 2)
         {
             Msg2.SetActive(true);
-         }
+            Vibration.Vibrate(100);
+        }
         if (Cnt == 3)
         {
             Msg3.SetActive(true);
+            Vibration.Vibrate(100);
+
         }
         if (Cnt == 4)
         {
             Destroy(gameObject);
+            Vibration.Vibrate(100);
         }
         
 

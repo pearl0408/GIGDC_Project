@@ -55,6 +55,7 @@ public class OpeningAnimation : MonoBehaviour
         Clockdown = true;
         startTime = Time.time;
         lightPanel.GetComponent<Animator>().speed = 1.0f;
+        Vibration.Vibrate(100);
         StartCoroutine(ClockRotate());
         //StartCoroutine(lightSet());
     }

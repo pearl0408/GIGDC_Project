@@ -41,6 +41,7 @@ public class OrderIngredient : MonoBehaviour
             else    //재료 선택이 틀렸다면 선택 초기화
             {
                 GameManager.instance.orderFood = "";
+                Vibration.Vibrate(100); // 진동함수
                 ResetSelect();
             }
         }

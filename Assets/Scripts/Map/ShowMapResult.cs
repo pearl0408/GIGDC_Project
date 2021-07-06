@@ -38,6 +38,7 @@ public class ShowMapResult : MonoBehaviour
         else
         {
             panelMap.GetComponent<Image>().sprite = noAnswer;
+            Vibration.Vibrate(100); // 진동 함수
         }
      
         yield return new WaitForSeconds(0.01f); //0.01초 딜레이

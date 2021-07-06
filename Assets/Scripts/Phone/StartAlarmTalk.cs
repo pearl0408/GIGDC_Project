@@ -18,6 +18,7 @@ public class StartAlarmTalk : MonoBehaviour
 
     public void alarmTalk()
     {
+        Vibration.Vibrate(100); // 진동 함수
         StartCoroutine(downAndup());
     }
 

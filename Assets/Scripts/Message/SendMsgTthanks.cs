@@ -48,6 +48,7 @@ public class SendMsgTthanks : MonoBehaviour
     // 복붙하기 클릭할 시 변화
     public void clickedCopyBtn()
     {
+        Vibration.Vibrate(100); // 진동함수
         CopyBtnTxt.text = "010-0000-0000";
         StartCoroutine(Typing(m_TypingText, m_Message, m_Speed));
     }
@@ -77,16 +78,17 @@ public class SendMsgTthanks : MonoBehaviour
     // 전송 메세지를 보여주고 
     public void clikedSendBtn()
     {
+        Vibration.Vibrate(100); // 진동함수
         inputTxt.text = "";
         myMsg.SetActive(true);
 
         // 3분 대기 함수
-        Invoke("showYourMsg", 10);
+        Invoke("showYourMsg", 60 * 3);
 
     }
 
     public void showYourMsg()
-    {       
+    {
         yourMsg.SetActive(true);  
     }
 
