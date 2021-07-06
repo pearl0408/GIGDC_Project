@@ -23,6 +23,10 @@ public class SunAndMoon : MonoBehaviour
         {
             this.GetComponent<Image>().sprite = SunMoon[1];    //달 그림으로 변경
         }
+        else if (intHour < 6 && AMOrPM == "AM")     //만약 오전 6시 이전이라면
+        {
+            this.GetComponent<Image>().sprite = SunMoon[1];    //달 그림으로 변경
+        }
         else
         {
             this.GetComponent<Image>().sprite = SunMoon[0];    //해 그림으로 변경
