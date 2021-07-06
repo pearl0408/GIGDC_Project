@@ -8,15 +8,21 @@ public class Day6Panel4 : MonoBehaviour
     float fadeAlpha;
     public GameObject nextPanel;
     public GameObject nextButton;
+    public GameObject sound;
+    public GameObject BGM;
     
     // Start is called before the first frame update
     void Start()
     {
+        
+        
         StartCoroutine(nextGo());
     }
 
     IEnumerator nextGo()
     {
+        BGM.GetComponent<AudioSource>().Stop();
+        
         fadeAlpha = 0.0f;   //처음 알파값
 
         while (fadeAlpha < 1.0f)
@@ -25,7 +31,7 @@ public class Day6Panel4 : MonoBehaviour
             yield return new WaitForSeconds(0.01f); //0.01초 딜레이
             gameObject.GetComponent<Image>().color = new Color(gameObject.GetComponent<Image>().color.r, gameObject.GetComponent<Image>().color.g, gameObject.GetComponent<Image>().color.b, fadeAlpha);
         }
-
+        sound.GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(2.0f);
 
         fadeAlpha = 0.0f;   //처음 알파값

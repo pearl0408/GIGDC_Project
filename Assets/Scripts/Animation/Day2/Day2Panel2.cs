@@ -32,6 +32,8 @@ public class Day2Panel2 : MonoBehaviour
     IEnumerator nextGo()
     {
         fadeAlpha = 0.0f;   //처음 알파값
+        gameObject.GetComponent<AudioSource>().Play();
+        yield return new WaitForSeconds(2.0f); //0.01초 딜레이
 
         while (fadeAlpha < 1.0f)
         {
@@ -43,7 +45,7 @@ public class Day2Panel2 : MonoBehaviour
 
         }
         cloud.SetActive(true);
-        
+        sky.GetComponent<AudioSource>().Play();
 
         yield return new WaitForSeconds(5.0f);
 

@@ -17,17 +17,18 @@ public class Day6Panel2 : MonoBehaviour
 
     IEnumerator Panel2()
     {
+        yield return new WaitForSeconds(1.0f); //0.01초 딜레이
+
         //gameObject.SetActive(true);
         //등장하기
         fadeAlpha = 0.0f;   //처음 알파값
-
         while (fadeAlpha < 1.0f)
         {
             fadeAlpha += 0.01f;
             yield return new WaitForSeconds(0.01f); //0.01초 딜레이
             gameObject.GetComponent<Image>().color = new Color(gameObject.GetComponent<Image>().color.r, gameObject.GetComponent<Image>().color.g, gameObject.GetComponent<Image>().color.b, fadeAlpha);
         }
-
+        gameObject.GetComponent<AudioSource>().Stop();
         yield return new WaitForSeconds(5.0f); //0.01초 딜레이
 
         fadeAlpha = 1.0f;   //처음 알파값

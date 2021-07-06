@@ -423,6 +423,7 @@ public class Book : MonoBehaviour {
         if (OnFlip != null)
             OnFlip.Invoke();
 
+        gameObject.GetComponent<AudioSource>().Play();
         if (index > 5)
         {
             StartCoroutine(nextPanelGo());

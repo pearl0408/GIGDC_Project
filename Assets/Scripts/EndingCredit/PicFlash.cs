@@ -130,6 +130,9 @@ public class PicFlash : MonoBehaviour
         {
             //홈으로 전환
             Debug.Log("홈으로 가자");
+
+            //bgm 재생 종료
+            this.GetComponent<AudioSource>().Stop();
         }
     }
 }
