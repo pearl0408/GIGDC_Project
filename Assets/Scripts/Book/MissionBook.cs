@@ -19,12 +19,16 @@ public class MissionBook : MonoBehaviour
         {
             case 0:
                 GameManager.instance.selectBook = "bread";  break;
+                PlayerPrefs.SetString("SelectBook", "bread");
             case 1:
                 GameManager.instance.selectBook = "cat"; break;
+                PlayerPrefs.SetString("SelectBook", "cat");
             case 2:
                 GameManager.instance.selectBook = "chicken"; break;
+                PlayerPrefs.SetString("SelectBook", "chicken");
             case 3:
                 GameManager.instance.selectBook = "dinner"; break;
+                PlayerPrefs.SetString("SelectBook", "dinner");
         }
     }
 
