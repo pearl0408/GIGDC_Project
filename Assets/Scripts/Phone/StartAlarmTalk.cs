@@ -7,6 +7,7 @@ public class StartAlarmTalk : MonoBehaviour
     public void alarmTalk()
     {
         Vibration.Vibrate(100); // 진동 함수
+        this.GetComponent<AudioSource>().Play();
         StartCoroutine(downAndup());
     }
 

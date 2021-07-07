@@ -22,16 +22,19 @@ public class SendMsgTCousin : MonoBehaviour
 
         if(Cnt == 1)
          {
+            this.GetComponent<AudioSource>().Play();
             Msg1.SetActive(true);
             Vibration.Vibrate(100);
         }
         if (Cnt == 2)
         {
+            this.GetComponent<AudioSource>().Play();
             Msg2.SetActive(true);
             Vibration.Vibrate(100);
         }
         if (Cnt == 3)
         {
+            this.GetComponent<AudioSource>().Play();
             Msg3.SetActive(true);
             Vibration.Vibrate(100);
 
