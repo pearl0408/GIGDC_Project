@@ -8,7 +8,7 @@ public class SelectDay5 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Sprite selectPic = (Sprite)GameManager.instance.likeAlbumartList[0];
+        Sprite selectPic = (Sprite)GameManager.instance.likeAlbumart;
         gameObject.GetComponent<Image>().sprite = selectPic;
     }
 

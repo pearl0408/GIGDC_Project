@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
 
     public int saveDay; //마지막으로 저장된 에피소드 날짜
     public string playlistTitle;
-    public ArrayList likeAlbumartList = new ArrayList();
+    public Sprite likeAlbumart;
     public string searchFood;   //검색한 음식
     public string orderFood;   //주문한 음식
     public string selectBook;   //선택한 책
