@@ -7,6 +7,7 @@ public class Day7Panel7 : MonoBehaviour
 {
     float fadeAlpha;
     public GameObject nextPanel;
+    public GameObject bgm;
 
 
     // Start is called before the first frame update
@@ -21,6 +22,8 @@ public class Day7Panel7 : MonoBehaviour
         yield return new WaitForSeconds(2.0f); //0.01초 딜레이
         //gameObject.SetActive(true);
         //등장하기
+        bgm.GetComponent<AudioSource>().Play();
+
         fadeAlpha = 0.0f;   //처음 알파값
 
         while (fadeAlpha < 1.0f)

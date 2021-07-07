@@ -12,6 +12,7 @@ public class TypingAnswer : MonoBehaviour
     public GameObject playerAnswerPanel; //플레이어 대사 선택 버튼
     public Image BG;    //배경 이미지
     public GameObject breakLine;    //깨진 이미지
+    public GameObject bgm;
 
     public Image mom_Image;   //엄마 이미지
     public Image player_Image;    //주인공 이미지
@@ -35,7 +36,7 @@ public class TypingAnswer : MonoBehaviour
     {
         //mom_Text = mom_Message.gameObject.transform.GetChild(0).gameObejct.GetComponent<Text>();   //텍스트를 가져옴
         //player_Text = player_Message.gameObject.transform.GetChild(0).gameObejct.GetComponent<Text>(); //텍스트를 가져옴
-
+        bgm.GetComponent<AudioSource>().Play();
         conflictFlow = 0;   //다툼 흐름
         breakLine.gameObject.SetActive(false);
         //다툼 시작
