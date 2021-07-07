@@ -12,7 +12,7 @@ public class SaveChapter : MonoBehaviour
 
     void OnEnable()     //활성화 될 때마다
     {
-        int save = PlayerPrefs.GetInt("SaveDay", 1);
+        int save = PlayerPrefs.GetInt("SaveDay", 0);
 
         chapterList[save].gameObject.SetActive(true);   //마지막으로 한 챕터의 다음 챕터 시작되게
 

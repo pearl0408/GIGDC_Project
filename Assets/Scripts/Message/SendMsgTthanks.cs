@@ -83,7 +83,7 @@ public class SendMsgTthanks : MonoBehaviour
         myMsg.SetActive(true);
 
         // 3분 대기 함수
-        Invoke("showYourMsg", 60 * 3);
+        Invoke("showYourMsg", 60 * 1);
 
     }
 

@@ -108,7 +108,7 @@ public class OpeningAnimation : MonoBehaviour
             if((totalTime + thisTime) > 9.0f)
             {
                //효과음 - 진동소리 (on)
-                nextPanel.GetComponent<AudioSource>().Play();
+                //nextPanel.GetComponent<AudioSource>().Play();
                 nextPanel.SetActive(true);
 
                 gameObject.SetActive(false);

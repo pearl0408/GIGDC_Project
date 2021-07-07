@@ -30,7 +30,7 @@ public class Day5Panel2 : MonoBehaviour
             yield return new WaitForSeconds(0.01f); //0.01√  µÙ∑π¿Ã
             gameObject.GetComponent<Image>().color = new Color(gameObject.GetComponent<Image>().color.r, gameObject.GetComponent<Image>().color.g, gameObject.GetComponent<Image>().color.b, fadeAlpha);
             musicAlbum.GetComponent<Image>().color = new Color(musicAlbum.GetComponent<Image>().color.r, musicAlbum.GetComponent<Image>().color.g, musicAlbum.GetComponent<Image>().color.b, fadeAlpha);
-            musicTitle.GetComponent<Image>().color = new Color(musicTitle.GetComponent<Image>().color.r, musicTitle.GetComponent<Image>().color.g, musicTitle.GetComponent<Image>().color.b, fadeAlpha);
+            //musicTitle.GetComponent<Image>().color = new Color(musicTitle.GetComponent<Image>().color.r, musicTitle.GetComponent<Image>().color.g, musicTitle.GetComponent<Image>().color.b, fadeAlpha);
         }
 
         yield return new WaitForSeconds(2.0f);

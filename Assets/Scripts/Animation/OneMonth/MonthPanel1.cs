@@ -114,7 +114,7 @@ public class MonthPanel1 : MonoBehaviour
 
         end = true;
 
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
 
     }
 
