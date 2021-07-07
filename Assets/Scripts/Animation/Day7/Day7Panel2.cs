@@ -55,9 +55,4 @@ public class Day7Panel2 : MonoBehaviour
         gameObject.SetActive(false);
 
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

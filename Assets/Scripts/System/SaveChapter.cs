@@ -1,19 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SaveChapter : MonoBehaviour
 {
-   
-    //챕터를 저장하는 함수(Day 하나가 끝날 때마다 실행)
-    public void SaveThisChapter(int chapterIndex)
-    {
-        PlayerPrefs.SetInt("SaveChapter", chapterIndex);
-    }
+    //챕터에 저장 기록을 적용하는 함수
 
-    //저장된 챕터를 반환하는 함수
-    public int LoadSaveChapter()
+    public Button[] chapterList;    //챕터 실행시키는 버튼
+    public Image[] checkLine;   //이미 완료한 챕터에 표시할 선
+
+    void OnEnable()     //활성화 될 때마다
     {
-        return PlayerPrefs.GetInt("SaveChapter", 1);
+        int save = PlayerPrefs.GetInt("SaveDay", 1);
+
+        chapterList[save].gameObject.SetActive(true);   //마지막으로 한 챕터의 다음 챕터 시작되게
+
+        for (int i = 0; i < save; i++)
+        {
+            chapterList[i].gameObject.SetActive(true);
+            checkLine[i].gameObject.SetActive(true);
+        }
     }
 }

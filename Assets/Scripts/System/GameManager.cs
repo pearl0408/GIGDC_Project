@@ -30,5 +30,8 @@ public class GameManager : MonoBehaviour
 
         //변수 초기화
         saveDay = PlayerPrefs.GetInt("SaveDay", 1);    //마지막으로 저장된 에피소드 회차를 가져옴. 만약 없다면 1을 가져옴.
+        orderFood = PlayerPrefs.GetString("OrderFood", "Omelet");   //없다면 오믈렛으로 초기화
+        selectBook = PlayerPrefs.GetString("SelectBook", "cat");    //없다면 cat으로 초기화
+        selectMovie = PlayerPrefs.GetString("SelectMovie", "action");   //없다면 액션 영화로 초기화
     }
 }
