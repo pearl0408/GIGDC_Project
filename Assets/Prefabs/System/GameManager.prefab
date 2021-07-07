@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5042519551978276676}
   - component: {fileID: 7475528339126607548}
-  - component: {fileID: 6219225077102941683}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -45,17 +44,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   saveDay: 0
---- !u!114 &6219225077102941683
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1703353366996744600}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b50e5e16f4234444af754b0579994f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FadeImg: {fileID: 0}
-  FadeTime: 3
+  playlistTitle: 
+  searchFood: 
+  orderFood: 
+  selectBook: 
+  selectMovie: 

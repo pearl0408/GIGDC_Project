@@ -117,17 +117,7 @@ public class MakePlaylist : MonoBehaviour
             }
         }
 
-        //테스트용
-        //StartCoroutine(Imagego());
+        //씬 전환
+        GameObject.FindWithTag("GameSystem").GetComponent<SceneChange>().StartAnimationDay5Scene();
     }
-
-    //테스트용
-    /*IEnumerator Imagego()
-    {
-        for(int i=0; i<musicNum; i++)
-        {
-            test.GetComponent<Image>().sprite = (Sprite)GameManager.instance.likeAlbumartList[i];
-            yield return new WaitForSeconds(1.0f);
-        }
-    }*/
 }

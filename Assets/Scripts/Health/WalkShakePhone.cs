@@ -47,8 +47,9 @@ public class WalkShakePhone : MonoBehaviour
             if (walkNumText == 6000)
             {
                 //씬 전환
-                Debug.Log("애니메이션 전환");
                 success.SetActive(true);
+
+                GameObject.FindWithTag("GameSystem").GetComponent<SceneChange>().StartAnimationDay1Scene(); //씬 전환
             }
 
             moveVelocity = new Vector2(0, 1.0f);

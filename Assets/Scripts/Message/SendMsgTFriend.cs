@@ -41,6 +41,7 @@ public class SendMsgTFriend : MonoBehaviour
         }
     }
 
+
     // 타이핑 출력 함수 
     IEnumerator Typing(Text typingText, string message, float speed)
     {
@@ -74,5 +75,8 @@ public class SendMsgTFriend : MonoBehaviour
     {
         yield return new WaitForSeconds(2.0f);
         popUpMsg.SetActive(true);
+
+        yield return new WaitForSeconds(3.0f);
+        GameObject.FindWithTag("GameSystem").GetComponent<SceneChange>().StartAnimationInstaScene();
     }
 }

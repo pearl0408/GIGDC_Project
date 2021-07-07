@@ -4,18 +4,6 @@ using UnityEngine;
 
 public class StartAlarmTalk : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void alarmTalk()
     {
         Vibration.Vibrate(100); // 진동 함수

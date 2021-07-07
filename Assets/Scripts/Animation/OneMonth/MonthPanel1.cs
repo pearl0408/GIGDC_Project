@@ -7,7 +7,6 @@ public class MonthPanel1 : MonoBehaviour
 {
     public Sprite[] feeds = new Sprite[13];
     float fadeAlpha;
-    public GameObject nextPanel;
     int index;
     public GameObject feedImg;
 
@@ -114,7 +113,6 @@ public class MonthPanel1 : MonoBehaviour
         yield return new WaitForSeconds(2.0f); //0.01√  µÙ∑π¿Ã
 
         end = true;
-        nextPanel.SetActive(true);
 
         gameObject.SetActive(false);
 
@@ -125,12 +123,7 @@ public class MonthPanel1 : MonoBehaviour
         if(end)
         {
             //¥Ÿ¿Ω æ¿ ¿¸»Ø
+            GameObject.FindWithTag("GameSystem").GetComponent<SceneChange>().StartEndingCredits();
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

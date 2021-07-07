@@ -12,7 +12,6 @@ public class ChangeMode : MonoBehaviour
     private int intHour;
     private string AMOrPM;
     private string hour;
-    public GameObject Text;
 
     void Start()
     {
@@ -35,18 +34,14 @@ public class ChangeMode : MonoBehaviour
         if (intHour >= 6 && AMOrPM == "PM")  //만약 저녁 6시 이후라면
         {
             this.GetComponent<Image>().sprite = modeImg[1];    //다크모드로 변경
-            Text.GetComponent<Text>().color = new Color(1, 1, 1);
-
         }
         else if (intHour < 6 && AMOrPM == "AM")     //만약 오전 6시 이전이라면
         {
             this.GetComponent<Image>().sprite = modeImg[1];    //다크모드로 변경
-            Text.GetComponent<Text>().color = new Color(1, 1, 1);
         }
         else
         {
             this.GetComponent<Image>().sprite = modeImg[0];    //화이트모드로 변경
-            Text.GetComponent<Text>().color = new Color(0, 0, 0);
         }
     }
 }

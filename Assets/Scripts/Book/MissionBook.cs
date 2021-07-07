@@ -27,4 +27,11 @@ public class MissionBook : MonoBehaviour
                 GameManager.instance.selectBook = "dinner"; break;
         }
     }
+
+    //미션북 버튼 이벤트
+    public void SelectMissionBook()
+    {
+        //다음 씬으로 이동
+        GameObject.FindWithTag("GameSystem").GetComponent<SceneChange>().StartAnimationDay2Scene();
+    }
 }

@@ -8,13 +8,13 @@ public class SendMsgTthanks : MonoBehaviour
 {
     public GameObject myMsg, yourMsg; // 메세지 변수
     public Button copyBtn,sendBtn; // 복사하기 버튼 
+    public GameObject alarmMessage;  //메시지 패널
 
     public Text m_TypingText; // 타이핑 메세지
     public string m_Message; // 전송 메세지
     public float m_Speed = 0.2f; // 타이핑 속도
     public Text CopyBtnTxt; // 복사한 거 번호
     public Text inputTxt; // text안 초기화 
-
 
     int waitingTime = 2;
     float timer = 0;
@@ -38,6 +38,11 @@ public class SendMsgTthanks : MonoBehaviour
         // 버튼 클릭하기
         copyBtn.onClick.AddListener(clickedCopyBtn);
       
+    }
+
+    void OnEnable() //씬이 활성화 될 때마다 확인
+    {
+        ReceiveAnswer();
     }
 
     // 복붙하기 클릭할 시 변화
@@ -84,7 +89,22 @@ public class SendMsgTthanks : MonoBehaviour
 
     public void showYourMsg()
     {
+        alarmMessage.GetComponent<StartAlarmTalk>().alarmTalk();
         yourMsg.SetActive(true);  
     }
 
+    //학생회장 문자를 받고 다음 스크립트로 넘어가는 함수
+    public void ReceiveAnswer()
+    {
+        if (this.gameObject.activeSelf == true && yourMsg.gameObject.activeSelf == true)    //메시지 어플이 활성화되어있고 답장도 왔다면
+        {
+            StartCoroutine("WaitAndSceneChange");
+        }
+    }
+
+    IEnumerator WaitAndSceneChange()
+    {
+        yield return new WaitForSeconds(5f);   //5초뒤
+        GameObject.FindWithTag("GameSystem").GetComponent<SceneChange>().StartBeforeOneWeekScene(); //씬 전환
+    }
 }

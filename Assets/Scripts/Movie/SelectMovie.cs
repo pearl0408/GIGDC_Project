@@ -9,6 +9,7 @@ public class SelectMovie : MonoBehaviour
 
     public void SelectThisMovie()
     {
-        GameManager.instance.selectMovie = thisMovie.ToString();
+        GameManager.instance.selectMovie = thisMovie.ToString();    //고른 영화 저장
+        GameObject.FindWithTag("GameSystem").GetComponent<SceneChange>().StartAnimationDay3Scene(); //씬 전환
     }
 }

@@ -43,14 +43,4 @@ public class Day3Panel3 : MonoBehaviour
 
         nextButton.SetActive(true);
     }
-
-    public void nextScene()
-    {
-        //다음씬 전환
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

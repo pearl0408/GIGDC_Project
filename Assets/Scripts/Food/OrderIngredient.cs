@@ -24,19 +24,23 @@ public class OrderIngredient : MonoBehaviour
         {
             if (selectIngredients.Contains(Ingredients.egg) && selectIngredients.Contains(Ingredients.ketchup) && selectIngredients.Contains(Ingredients.rice))    //오므라이스 재료가 다 선택됐다면
             {
-                GameManager.instance.orderFood = "Omelet"; 
+                GameManager.instance.orderFood = "Omelet";
+                GameObject.FindWithTag("GameSystem").GetComponent<SceneChange>().StartAnimationDay4Scene();  //씬 전환
             }
             else if (selectIngredients.Contains(Ingredients.noodle) && selectIngredients.Contains(Ingredients.shrimp) && selectIngredients.Contains(Ingredients.tomato))  //파스타 재료가 다 선택됐다면
             {
                 GameManager.instance.orderFood = "Pasta";
+                GameObject.FindWithTag("GameSystem").GetComponent<SceneChange>().StartAnimationDay4Scene();  //씬 전환
             }
             else if (selectIngredients.Contains(Ingredients.bread) && selectIngredients.Contains(Ingredients.bacon) && selectIngredients.Contains(Ingredients.cheese))  //샌드위치 재료가 다 선택됐다면
             {
                 GameManager.instance.orderFood = "Sandwich";
+                GameObject.FindWithTag("GameSystem").GetComponent<SceneChange>().StartAnimationDay4Scene();  //씬 전환
             }
             else if (selectIngredients.Contains(Ingredients.herb) && selectIngredients.Contains(Ingredients.meat) && selectIngredients.Contains(Ingredients.pepper))  //스테이크 재료가 다 선택됐다면
             {
                 GameManager.instance.orderFood = "Steak";
+                GameObject.FindWithTag("GameSystem").GetComponent<SceneChange>().StartAnimationDay4Scene();  //씬 전환
             }
             else    //재료 선택이 틀렸다면 선택 초기화
             {
