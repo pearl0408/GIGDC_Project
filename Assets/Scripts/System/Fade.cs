@@ -9,7 +9,7 @@ public class Fade : MonoBehaviour
     public Image FadeImg;   //페이드 효과에 사용할 이미지
 
     void Start()
-    {
+    {  
         //게임이 시작되면 페이드인 함수 실행
         FadeIn();
     }

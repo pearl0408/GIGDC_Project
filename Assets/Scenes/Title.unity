@@ -1028,7 +1028,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3c84b3b923163c41bc3222a693e5c32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BGAudio: {fileID: 1157349067}
+  BGAudio: {fileID: 0}
   BGSlider: {fileID: 1720427931}
   EFSlider: {fileID: 2035207758}
   VibOff: {fileID: 714801978}
@@ -2314,7 +2314,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 63c68dd05134d9d44814e782cc95edb2, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
