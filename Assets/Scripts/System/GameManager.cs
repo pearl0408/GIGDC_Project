@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
         //싱글톤 변수 instance가 이미 있다면
         if (instance)
         {
-            DestroyImmediate(gameObject);   //삭제
+            DestroyImmediate(this);   //삭제
         }
 
         instance = this;    //유일한 인스턴스로 만든다.
