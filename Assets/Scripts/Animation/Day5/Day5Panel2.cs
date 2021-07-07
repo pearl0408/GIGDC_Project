@@ -14,7 +14,7 @@ public class Day5Panel2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        musicAlbum.GetComponent<Image>().sprite = (Sprite)GameManager.instance.likeAlbumartList[0];
+        musicAlbum.GetComponent<Image>().sprite = GameManager.instance.likeAlbumart;
         musicTitle.GetComponent<Text>().text = GameManager.instance.playlistTitle;
 
         StartCoroutine(nextGo());

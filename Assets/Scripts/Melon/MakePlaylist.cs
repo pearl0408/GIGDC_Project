@@ -109,11 +109,13 @@ public class MakePlaylist : MonoBehaviour
     public void makePlaylist(InputField keyword)
     {
         GameManager.instance.playlistTitle = keyword.text;
+        
         for(int i=0; i<10; i++)
         {
             if(musicLlkeList[i])
             {
-                GameManager.instance.likeAlbumartList.Add(albumartList[i]);
+                GameManager.instance.likeAlbumart=albumartList[i];
+                break;
             }
         }
 

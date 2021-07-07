@@ -88,7 +88,7 @@ public class MonthPanel1 : MonoBehaviour
             else if(index==4)
             {
                 feedImg.SetActive(true);
-                Sprite selectPic = (Sprite)GameManager.instance.likeAlbumartList[0];
+                Sprite selectPic = (Sprite)GameManager.instance.likeAlbumart;
                 feedImg.GetComponent<Image>().sprite = selectPic;
             }
             

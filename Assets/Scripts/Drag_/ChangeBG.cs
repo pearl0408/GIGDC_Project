@@ -45,7 +45,7 @@ public class ChangeBG : MonoBehaviour
         }
         else
         {
-            thisBG.color = new Color(1f, 1f, 1f, 1f);   //화이트모드로 변경
+            thisBG.color = new Color(1f, 1f, 1f, 0.5f);   //화이트모드로 변경
         }
     }
 }
