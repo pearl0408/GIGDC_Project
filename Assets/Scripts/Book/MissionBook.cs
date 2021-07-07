@@ -18,17 +18,17 @@ public class MissionBook : MonoBehaviour
         switch(randomInt)
         {
             case 0:
-                GameManager.instance.selectBook = "bread";  break;
-                PlayerPrefs.SetString("SelectBook", "bread");
+                GameManager.instance.selectBook = "bread";  
+                PlayerPrefs.SetString("SelectBook", "bread"); break;
             case 1:
-                GameManager.instance.selectBook = "cat"; break;
-                PlayerPrefs.SetString("SelectBook", "cat");
+                GameManager.instance.selectBook = "cat"; 
+                PlayerPrefs.SetString("SelectBook", "cat"); break;
             case 2:
-                GameManager.instance.selectBook = "chicken"; break;
-                PlayerPrefs.SetString("SelectBook", "chicken");
+                GameManager.instance.selectBook = "chicken";
+                PlayerPrefs.SetString("SelectBook", "chicken"); break;
             case 3:
-                GameManager.instance.selectBook = "dinner"; break;
-                PlayerPrefs.SetString("SelectBook", "dinner");
+                GameManager.instance.selectBook = "dinner"; 
+                PlayerPrefs.SetString("SelectBook", "dinner"); break;
         }
     }
 
