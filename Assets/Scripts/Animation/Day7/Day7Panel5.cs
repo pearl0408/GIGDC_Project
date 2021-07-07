@@ -7,6 +7,7 @@ public class Day7Panel5 : MonoBehaviour
 {
     float fadeAlpha;
     public GameObject nextPanel;
+    public GameObject BGM;
 
 
     // Start is called before the first frame update
@@ -35,8 +36,8 @@ public class Day7Panel5 : MonoBehaviour
         //어두워지기
         
         gameObject.GetComponent<Image>().color = new Color(0, 0, 0, 1);
-
         yield return new WaitForSeconds(2.0f); //0.01초 딜레이
+        BGM.GetComponent<AudioSource>().Stop();
 
         nextPanel.SetActive(true);
 
