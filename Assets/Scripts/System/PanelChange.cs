@@ -6,6 +6,7 @@ public class PanelChange : MonoBehaviour
 {
     //패널 전환 스크립트
     public GameObject settingPanel;
+    public GameObject chapterPanel;
 
     public void OpenSettingPanel()
     {
@@ -16,6 +17,17 @@ public class PanelChange : MonoBehaviour
     {
         StartCoroutine(PanelCloseDelay(settingPanel, 0.5f));
     }
+
+    public void OpenChapterPanel()
+    {
+        StartCoroutine(PanelOpenDelay(chapterPanel, 0.5f));
+    }
+
+    public void CloseChapterPanel()
+    {
+        StartCoroutine(PanelCloseDelay(chapterPanel, 0.5f));
+    }
+
 
     //페이드 후 몇 초간 딜레이를 주고, 패널을 여는 코루틴 함수
     IEnumerator PanelOpenDelay(GameObject PanelTitle, float delayTime)
