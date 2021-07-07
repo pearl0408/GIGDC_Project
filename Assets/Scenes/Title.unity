@@ -538,10 +538,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 84283960}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 519285230}
+        m_TargetAssemblyTypeName: PanelChange, Assembly-CSharp
+        m_MethodName: OpenChapterPanel
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3611,7 +3611,7 @@ PrefabInstance:
     - target: {fileID: 252386649445270379, guid: 3e423af162c9f7d4ab0a4febb1230fe4,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CloseSettingPanel
+      value: CloseChapterPanel
       objectReference: {fileID: 0}
     - target: {fileID: 252386649445270379, guid: 3e423af162c9f7d4ab0a4febb1230fe4,
         type: 3}
@@ -4917,6 +4917,11 @@ PrefabInstance:
       propertyPath: FadeImg
       value: 
       objectReference: {fileID: 1568112778}
+    - target: {fileID: 2627373381946299267, guid: 9119fffe0b0a7144680e0d61fc0d62e4,
+        type: 3}
+      propertyPath: chapterPanel
+      value: 
+      objectReference: {fileID: 84283960}
     - target: {fileID: 2627373381946299267, guid: 9119fffe0b0a7144680e0d61fc0d62e4,
         type: 3}
       propertyPath: settingPanel
