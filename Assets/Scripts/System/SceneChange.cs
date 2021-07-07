@@ -32,6 +32,8 @@ public class SceneChange : MonoBehaviour
     {
         // 오디오 출력 멈춤 
         GameObject.Find("Main Camera").GetComponent<AudioSource>().Stop();
+        PlayerPrefs.SetInt("SaveDay", 0);    //데이터 저장
+        GameManager.instance.saveDay = 0;
         StartCoroutine(SceneChangeDelay("Day1", 1f));
     }
 

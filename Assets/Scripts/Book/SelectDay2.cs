@@ -14,24 +14,22 @@ public class SelectDay2 : MonoBehaviour
         if(selectPic=="cat")
         {
             gameObject.GetComponent<Image>().sprite = pics[0];
+            PlayerPrefs.SetString("SelectBook", "cat");
         }
         else if(selectPic=="bread")
         {
             gameObject.GetComponent<Image>().sprite = pics[1];
+            PlayerPrefs.SetString("SelectBook", "bread");
         }
         else if(selectPic=="chicken")
         {
             gameObject.GetComponent<Image>().sprite = pics[2];
+            PlayerPrefs.SetString("SelectBook", "chicken");
         }
         else if(selectPic=="dinner")
         {
             gameObject.GetComponent<Image>().sprite = pics[3];
+            PlayerPrefs.SetString("SelectBook", "dinner");
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
